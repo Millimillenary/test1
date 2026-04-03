@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta Iname="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Лаб 6 н1</title>
+    <style>
+        .html,
+        body {
+            background-image: linear-gradient(to bottom right, #677496, #101F35);
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0px;
+            align-self: center;
+
+            padding-bottom: 82px;
+        }
+
+        .hat {
+            height: 49px;
+            width: auto;
+            background-color: #D5D0CA;
+            clear: both;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 3px 3px 1px 3px #FFF9F2 inset, -3px -3px 1px 3px rgba(0, 0, 0, 0.25) inset;
+        }
+
+        .hatlogo {
+            display: block;
+            margin-left: 1%;
+            margin-right: 1%;
+            margin-top: 8px;
+            width: auto;
+            color: #000000;
+            height: fit-content;
+            background-image: linear-gradient(to right, #677496, #D5D0CA);
+            padding-right: 80px;
+            padding-left: 0.4%;
+            font-size: x-large;
+            font-family: Verdana;
+            position: absolute;
+        }
+
+        .menubar {
+            height: 67px;
+            margin-left: 1%;
+            margin-right: 1%;
+            background-color: #D5D0CA;
+            clear: both;
+            margin-top: 24px;
+            text-align: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 3px 3px 1px 3px #FFF9F2 inset, -3px -3px 1px 3px rgba(0, 0, 0, 0.25) inset;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .menubarcont {
+            height: 50px;
+            width: 98%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 7px;
+            align-content: center;
+            overflow: hidden;
+        }
+
+        .menubarlink {
+            background-color: #D5D0CA;
+            display: block;
+            width: 15.2%;
+            height: fit-content;
+            float: left;
+            padding: 10px;
+            margin-left: 1.3%;
+            margin-right: 1.3%;
+            box-shadow: 3px 3px 4px 1px #FFF9F2 inset, -3px -3px 4px 3px rgba(0, 0, 0, 0.25) inset, 1px 1px 1px 2px rgba(0, 0, 0);
+            font-size: 15px;
+            color: #000000;
+        }
+
+        .menubarlink:hover {
+            box-shadow: 3px 3px 4px 2px #FFF9F2 inset, -3px -3px 4px 4px rgba(0, 0, 0, 0.25) inset, 1px 1px 3px 2px rgba(0, 0, 0);
+        }
+
+        .colcont {
+            margin-left: 0%;
+            margin-right: 0%;
+            height: fit-content;
+            width: auto;
+            min-width: 400px;
+            position: relative;
+        }
+
+        .leftcol {
+            background-color: #D5D0CA;
+            height: 820px;
+            width: 220px;
+            float: left;
+            position: static;
+            display: none;
+            margin-right: 24px;
+            margin-left: auto;
+            box-shadow: 3px 3px 1px 3px #FFF9F2 inset, -3px -3px 1px 3px rgba(0, 0, 0, 0.25) inset;
+            border-radius: 3px;
+        }
+
+        .rightcol {
+            display: none;
+            background-color: #D5D0CA;
+            height: 820px;
+            width: 220px;
+            float: right;
+            margin-left: 24px;
+            margin-right: auto;
+            text-align: left;
+            box-shadow: 3px 3px 1px 3px #FFF9F2 inset, -3px -3px 1px 3px rgba(0, 0, 0, 0.25) inset;
+            border-radius: 3px;
+        }
+
+        .midcol {
+            margin-left: 1%;
+            margin-right: 1%;
+            display: block;
+            left: 40px;
+            right: 60px;
+            max-width: auto;
+            min-width: 400px;
+            height: 820px;
+            background-color: #D5D0CA;
+            margin-top: 24px;
+            overflow: hidden;
+            box-shadow: 3px 3px 1px 3px #FFF9F2 inset, -3px -3px 1px 3px rgba(0, 0, 0, 0.25) inset;
+            border-radius: 3px;
+        }
+
+        .lrcolumndeco {
+            height: 780px;
+            width: auto;
+            margin: 20px;
+            margin-left: 18px;
+            box-shadow: 0px 0px 0px 3px #847F79, 4px 4px 0px 0px rgba(255, 255, 255, 0.63) inset, 2px 2px 0px 4px rgba(255, 255, 255, 0.83);
+            background-color: #D5D0CA;
+            position: relative;
+        }
+
+        .mcolumndeco {
+            height: 780px;
+            width: auto;
+            margin: 20px;
+            box-shadow: 0px 0px 0px 3px #847F79, 4px 4px 0px 0px rgba(255, 255, 255, 0.63) inset, 2px 2px 0px 4px rgba(255, 255, 255, 0.83);
+            background-color: #D5D0CA;
+            position: relative;
+        }
+
+        .colhead {
+            width: fit-content;
+            height: 30px;
+            margin-top: -13px;
+            margin-left: 13px;
+            padding-left: 5px;
+            padding-right: 5px;
+            background-color: #D5D0CA;
+            position: absolute;
+            box-shadow: 0px 0px 7px 1px #D5D0CA;
+        }
+
+        .lcoltxt {
+            width: fit-content;
+            height: auto;
+            margin: 10px;
+            position: absolute;
+        }
+
+        .rcoltxt {
+            width: fit-content;
+            height: auto;
+            margin-left: -15px;
+            margin-right: 10px;
+            position: absolute;
+        }
+
+        .midcont {
+            margin: 1%;
+            width: fit-content;
+            height: fit-content;
+            position: absolute;
+            margin: 1%;
+            justify-content: center;
+            justify-items: center;
+        }
+
+        .midlink {
+            background-color: #D5D0CA;
+            box-shadow: 0px 0px 0px 3px #847F79, 4px 4px 0px 0px rgba(255, 255, 255, 0.63) inset, 2px 2px 0px 4px rgba(255, 255, 255, 0.83);
+            display: block;
+            float: left;
+            width: 170px;
+            height: 170px;
+            margin: 2%;
+            justify-content: center;
+            justify-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .imgcont {
+            height: 80%;
+            width: inherit;
+            position: absolute;
+        }
+
+        .midlinklayer {
+            background-color: #D5D0CA;
+            position:absolute;
+            bottom: -100%;
+            top: 80%;
+            left: 0px;
+            text-align: center;
+            width: inherit;
+            height: inherit;
+            transition: top.3s;
+            text-decoration: none;
+            color: #000000;
+            box-shadow: 3px 4px 4px 1px rgba(255, 255, 255, 0.63) inset, -4px -4px 4px 1px #847F79 inset;
+        }
+
+        .midhead {
+            margin-top: 7px;
+        }
+
+        .midtext {
+            font-size: 12px;
+            margin: 2px;
+        }
+
+        .midlink:hover .midlinklayer {
+            bottom: 0px;
+            top: 50%;
+        }
+
+        @media (min-width:1200px) {
+            .body {
+                padding-bottom: 0px;
+            }
+
+            .rightcol {
+                display: block;
+            }
+
+            .leftcol {
+                display: block;
+            }
+
+            .colcont {
+                margin-left: 10%;
+                margin-right: 10%;
+            }
+
+            .midcol {
+
+                min-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .menubar {
+                margin-left: 10%;
+                margin-right: 10%;
+            }
+
+            .hatlogo {
+                margin-left: 10%;
+                margin-right: 10%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hat">
+        <div class="hatlogo">BlueShift Studio</div>
+    </div>
+
+    <div class="menubar">
+        <div class="menubarcont"><a href="">
+                <div class="menubarlink"><b>ОТДЕЛЫ ПРОДАЖ</b></div>
+            </a>
+            <a href="">
+                <div class="menubarlink"><b>ГЛАВНАЯ</b></div>
+            </a>
+            <a href="">
+                <div class="menubarlink"><b>О НАС</b></div>
+            </a>
+            <a href="">
+                <div class="menubarlink"><b>ПОСТАВЩИКИ</b></div>
+            </a>
+            <a href="">
+                <div class="menubarlink"><b>КОНТАКТЫ</b></div>
+            </a>
+        </div>
+    </div>
+    <div class="colcont">
+        <div class="leftcol">
+            <div class="lrcolumndeco">
+                <div class="colhead">КОНТАКТЫ</div>
+                <div class="lcoltxt">
+                    <b>Эл. почта:</b>
+                    info@blueshift-studio.ru<br>
+                    <br><b>Fax:</b><br>
+                    +7 (917) XXX-XX-XX<br>
+                    <br><b>Номер телефона:</b><br>
+                    +7 (917) XXX-XX-XX<br>
+                    <br><b>Адресс:</b><br>
+                    Город Уфа,<br>
+                    ул. Аксакова, 27.<br>
+                    <br><b>Почтовый индекс:</b>
+                    450076
+                </div>
+            </div>
+
+        </div>
+        <div class="rightcol">
+            <div class="lrcolumndeco">
+                <div class="colhead">УСЛУГИ</div>
+                <div class="rcoltxt">
+                    <ul>
+                        <li>Разработка логотипа и фирменного стиля</li><br>
+                        <li>Дизайн сайтов и лендингов</li><br>
+                        <li>Дизайн UI/UX для веб‑приложений</li><br>
+                        <li>Баннеры и креативы для соцсетей</li><br>
+                        <li>Презентации и полиграфия (флаеры, буклеты)</li><br>
+                        <li>Редизайн существующих сайтов и брендов</li><br>
+                        <li>Дизайн и верстка визиток, сертификатов</li><br>
+                        <li>Консультации по визуальному оформлению бренда</li><br>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="midcol">
+            <div class="mcolumndeco">
+                <div class="midcont">
+                    <div class="midlink">
+                        <div class="imgcont"><img src="img/1.JPG" height="100%"></div>
+                        <a href="..." class="midlinklayer">
+                            <div class="midhead">Dark Tech</div>
+                            <div class="midtext">Тёмный интерфейс в стиле ранних техно‑порталов.</div>
+                        </a>
+                    </div>
+                    <div class="midlink">
+                        <div class="imgcont"><img src="img/2.JPG" height="100%"></div>
+                        <a href="..." class="midlinklayer">
+                            <div class="midhead">Aero Light</div>
+                            <div class="midtext">Светлый воздушный дизайн с эффектом чистоты и простора.</div>
+                        </a>
+                    </div>
+                    <div class="midlink">
+                        <div class="imgcont"><img src="img/3.JPG" height="100%"></div>
+                        <a href="..." class="midlinklayer">
+                            <div class="midhead">Blue Corporate</div>
+                            <div class="midtext">Классический синий стиль для официальных и корпоративных сайтов.</div>
+                        </a>
+                    </div>
+                    <div class="midlink">
+                        <div class="imgcont"><img src="img/4.JPG" height="100%"></div>
+                        <a href="..." class="midlinklayer">
+                            <div class="midhead">Neon Code</div>
+                            <div class="midtext">Неоновая эстетика с атмосферой старых кодерских интерфейсов.</div>
+                        </a>
+                    </div>
+                    <div class="midlink">
+                        <div class="imgcont"><img src="img/5.JPG" height="100%"></div>
+                        <a href="..." class="midlinklayer">
+                            <div class="midhead">Web Classic</div>
+                            <div class="midtext">Узнаваемый веб‑дизайн эпохи 2000‑х с яркими акцентами.</div>
+                        </a>
+                    </div>
+                    <div class="midlink">
+                        <div class="imgcont"><img src="img/6.JPG" height="100%"></div>
+                        <a href="..." class="midlinklayer">
+                            <div class="midhead">System Retro</div>
+                            <div class="midtext">Интерфейс в духе старых программ, системных окон и утилит.</div>
+                        </a>
+                    </div>
+                    <div class="midlink">
+                        <div class="imgcont"><img src="img/7.JPG" height="100%"></div>
+                        <a href="..." class="midlinklayer">
+                            <div class="midhead">Silver Tech</div>
+                            <div class="midtext">Металлический стиль с футуристичными элементами и кнопками.</div>
+                        </a>
+                    </div>
+                    <div class="midlink">
+                        <div class="imgcont"><img src="img/8.JPG" height="100%"></div>
+                        <a href="..." class="midlinklayer">
+                            <div class="midhead">Future Soft</div>
+                            <div class="midtext">Мягкий футуризм с плавными формами и светлыми оттенками.</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
